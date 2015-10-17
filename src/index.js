@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var api = {
     json: null,
-    path: path.join(process.env.PWD, 'briskly.json')
+    path: path.join(process.cwd(), 'briskly.json')
 };
 Object.defineProperty(api, 'json', {
     get: function () {

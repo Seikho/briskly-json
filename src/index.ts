@@ -5,7 +5,7 @@ export = api;
 
 var api = {
     json: <Types.Briskly>null,
-    path: path.join(process.env.PWD, 'briskly.json')
+    path: path.join(process.cwd(), 'briskly.json')
 }
 
 Object.defineProperty(api, 'json', {
