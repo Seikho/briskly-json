@@ -1,5 +1,8 @@
 export var json: Briskly;
 
+/** Expected location of briskly.json */
+export var path: string;
+
 export interface Briskly {
     port?: number;
 

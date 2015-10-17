@@ -1,8 +1,12 @@
 var path = require('path');
-exports.json = null;
+var json = null;
 var jsonPath = path.join(process.env.PWD, 'briskly.json');
 try {
-    exports.json = require(jsonPath);
+    json = require(jsonPath);
 }
 catch (ex) {
 }
+module.exports = {
+    json: json,
+    path: jsonPath
+};
