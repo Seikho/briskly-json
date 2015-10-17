@@ -1,17 +1,20 @@
+import Types = require('../index.d.ts');
 import fs = require('fs');
 import path = require('path');
+export = api;
 
-export = {
-    json, 
-    path: jsonPath
+var api = {
+    json: <Types.Briskly>null,
+    path: path.join(process.env.PWD, 'briskly.json')
 }
 
-var json = null;
-var jsonPath = path.join(process.env.PWD, 'briskly.json');
-
-try {
-    json = require(jsonPath);
-}
-catch (ex) {
-    // NOOP, check for !json in userland
-}
+Object.defineProperty(api, 'json', {
+    get: function() {
+        try {
+            var json = fs.readFileSync(api.path).toString();
+            return JSON.parse(json)
+        } catch (ex) {
+            return {};
+        }
+    }
+});

@@ -1,12 +1,18 @@
+var fs = require('fs');
 var path = require('path');
-var json = null;
-var jsonPath = path.join(process.env.PWD, 'briskly.json');
-try {
-    json = require(jsonPath);
-}
-catch (ex) {
-}
-module.exports = {
-    json: json,
-    path: jsonPath
+var api = {
+    json: null,
+    path: path.join(process.env.PWD, 'briskly.json')
 };
+Object.defineProperty(api, 'json', {
+    get: function () {
+        try {
+            var json = fs.readFileSync(api.path).toString();
+            return JSON.parse(json);
+        }
+        catch (ex) {
+            return {};
+        }
+    }
+});
+module.exports = api;
