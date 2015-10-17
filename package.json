@@ -1,0 +1,30 @@
+{
+  "name": "briskly-json",
+  "version": "0.1.0",
+  "description": "briskly.json parser",
+  "main": "src/index",
+  "scripts": {
+    "test": "mocha",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seikho/briskly-json.git"
+  },
+  "keywords": [
+    "briskly",
+    "json",
+    "parser"
+  ],
+  "author": "Carl Winkler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seikho/briskly-json/issues"
+  },
+  "homepage": "https://github.com/seikho/briskly-json#readme",
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3",
+    "typescript": "^1.6.2"
+  }
+}
