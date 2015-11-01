@@ -5,7 +5,9 @@ export var path: string;
 
 export interface Briskly {
     port?: number;
-
+    
+    host?: string;
+    
     routes?: {
         [routePath: string]: Route;
     }
