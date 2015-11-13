@@ -4,8 +4,16 @@ export var json: Briskly;
 export var path: string;
 
 export interface Briskly {
+    /** 
+     * Web server port number
+     * Defaults to 2189
+     **/
     port?: number;
     
+    /** 
+     * Web server host name
+     * Defaults to 'localhost'
+     */
     host?: string;
     
     routes?: {
@@ -15,6 +23,9 @@ export interface Briskly {
     components?: {
         [index: string]: Component;
     }
+    
+    /** Path to entry .html */
+    main?: string;
 }
 
 export interface Component {
