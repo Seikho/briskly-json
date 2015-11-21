@@ -26,6 +26,10 @@ export interface Briskly {
     
     /** Path to entry .html */
     main?: string;
+    
+    /** Path to JavaScript application entry point */
+    script?: string;
+    
 }
 
 export interface Component {
